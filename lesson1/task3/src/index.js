@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom'
+import "./styles.css";
 // const rootElement = document.querySelector('#root');
 
 // const renderGreeting = elem => {
@@ -10,7 +13,7 @@
 
 //   const textElem = document.createElement('p');
 //   textElem.classList.add('greeting__text');
-//   textElem.textContent = "I'm learning React";
+//   textElem.textContent = 'I am learning React';
 
 //   containerElem.append(titleElem, textElem);
 
@@ -19,21 +22,13 @@
 
 // renderGreeting(rootElement);
 
-const element = React.createElement(
-  'div',
-  { className: 'greeting' },
-  [
-    React.createElement(
-      'div',
-      { className: ' greeting__title' },
-      'Hello, world!'
-    ),
-    React.createElement(
-      'div',
-      { className: 'greeting__text' },
-      "I'm learning React"
-    ),
-  ]
+const rootElement = document.querySelector("#root");
+
+const element = (
+ <div class="greeting">
+   <div class="greeting__title">Hello, world!</div>
+   <div class="greeting__text">I am learning React</div>
+ </div>
 );
 
-ReactDOM.render(element, root)
+ReactDOM(element, rootElement)
