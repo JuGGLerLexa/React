@@ -19,31 +19,34 @@ module.exports = (env, argv) => {
         {
           test: /.s?css$/,
           use: [
-            isProduction
-              ? MiniCssExtractPlugin.loader
-              : "style-loader",
+            isProduction ? MiniCssExtractPlugin.loader : "style-loader",
             "css-loader",
-            "sass-loader",
+            "sass-loader"
           ]
         }
-      ],
+      ]
     },
     plugins: [
       new webpack.ProgressPlugin(),
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         template: "./src/index.html"
-      }),
+      })
     ],
+    resolve: {
+      extensions: [".js", ".jsx"]
+    },
     devServer: {
       hot: true
     }
   };
 
   if (isProduction) {
-    config.plugins.push(new MiniCssExtractPlugin({
-      filename: "[name].css",
-    }));
+    config.plugins.push(
+      new MiniCssExtractPlugin({
+        filename: "[name].css"
+      })
+    );
   }
 
   return config;
