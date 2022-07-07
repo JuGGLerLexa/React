@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
-import NumberList from './NumberList';
+import NumberList from './NumbersList';
 
 const rootElement = document.querySelector("#root");
 
