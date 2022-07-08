@@ -1,7 +1,7 @@
 import React from "react";
 import moment from "moment";
 
-const data = moment().format("DD MMM");
+const getDate = moment().format("DD MMM");
 
 const Transaction = ({ from, to, amount, rate, time }) => {
   const times = new Date(time);
@@ -15,23 +15,13 @@ const Transaction = ({ from, to, amount, rate, time }) => {
   const getAmount = new Intl.NumberFormat("en-GB", options).format(amount);
 
   return (
-    <ul className="transactions">
-      <li className="transaction">
-        <span className="transaction__date">10 Jan</span>
-        <span className="transaction__time">19:08</span>
-        <span className="transaction__assets">USD → EUR</span>
-        <span className="transaction__rate">0.8</span>
-        <span className="transaction__amount">1,200</span>
-      </li>
-      ...
-      <li className="transaction">
-        <span className="transaction__date">10 Jan</span>
-        <span className="transaction__time">19:01</span>
-        <span className="transaction__assets">EUR → USD</span>
-        <span className="transaction__rate">1.1</span>
-        <span className="transaction__amount">100</span>
-      </li>
-    </ul>
+    <li className="transaction">
+      <span className="transaction__date">{getDate}</span>
+      <span className="transaction__time">{getTime}</span>
+      <span className="transaction__assets">{`${from} → ${to}`}</span>
+      <span className="transaction__rate">{rate}</span>
+      <span className="transaction__amount">{getAmount}</span>
+    </li>
   );
 };
 
