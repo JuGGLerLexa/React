@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
-import Demo from "./Demo";
+import User from "./User";
 
 const rootElement = document.querySelector("#root");
 
-ReactDOM.render(<Demo />, rootElement);
+ReactDOM.render(<User userId="facebook" />, rootElement);

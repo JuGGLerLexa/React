@@ -1,56 +1,39 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
 }
 
 #root {
   height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
-.transactions {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  max-width: 600px;
-  width: 100%;
-}
-
-.transaction {
-  margin: 8px;
+.user {
   display: flex;
-  height: 32px;
-  line-height: 32px;
-  border-bottom: 1px solid #eee;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
 
-  &__date {
-    flex: 1;
-    opacity: 0.5;
+  &__avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
   }
 
-  &__time {
-    flex: 1;
+  &__info {
+    text-align: center;
+    font-size: 24px;
+    margin: 32px;
+  }
+
+  &__name {
     font-weight: 700;
   }
 
-  &__assets {
-    font-weight: 700;
+  &__location {
     opacity: 0.5;
-    flex: 1;
-  }
-
-  &__rate {
-    flex: 1;
-    text-align: right;
-  }
-
-  &__amount {
-    flex: 1;
-    text-align: right;
+    margin-left: 16px;
   }
 }
