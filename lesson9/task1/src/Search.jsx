@@ -9,7 +9,7 @@ class Search extends Component {
 
   search = () => {
     event.preventDefault();
-    console.log(this.state.value);
+    alert(this.state.value);
   };
 
   render() {
