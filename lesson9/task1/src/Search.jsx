@@ -7,9 +7,9 @@ class Search extends Component {
     this.setState({ value: event.target.value });
   };
 
-  search = () => {
+  search = (event) => {
     event.preventDefault();
-    alert('Search text: good restaurant');
+    alert(`Search text: ${this.state.value}`);
   };
 
   render() {
