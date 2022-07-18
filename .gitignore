@@ -1,2 +1,4 @@
 node_modules
-package-lock
+.idea
+.VS_Code
+package-lock.json
