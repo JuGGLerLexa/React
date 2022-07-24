@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import UserProfile from './UserProfile';
 import UserMenu from './UserMenu';
+import UserProfile from './UserProfile';
 
 class Page extends Component {
   state = {
     userData: null,
   };
-
+  
   componentDidMount() {
     this.fetchUserData(this.props.userId);
   }
@@ -15,11 +15,7 @@ class Page extends Component {
     const userUrl = `https://api.github.com/users/${userId}`;
     fetch(userUrl)
       .then(response => response.json())
-      .then(userData =>
-        this.setState({
-          userData,
-        }),
-      );
+      .then(userData => this.setState({ userData }));
   };
 
   render() {

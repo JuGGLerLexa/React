@@ -1,9 +1,10 @@
 import React from 'react';
 
 const UserMenu = ({ userData }) => {
-  if (userData) {
+  if (!userData) {
     return null;
   }
+  
   const { name, avatar_url } = userData;
   return (
     <div className="menu">
