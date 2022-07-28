@@ -1,7 +1,11 @@
-import React, { Component } from "react";
+import React from 'react';
 
-class FilterableProductTable extends Component {
-  
-}
+const ProductCategoryRow = ({ category }) => {
+  return (
+    <tr>
+      <th colSpan="2">{category}</th>
+    </tr>
+  );
+};
 
-export default FilterableProductTable;
+export default ProductCategoryRow;
