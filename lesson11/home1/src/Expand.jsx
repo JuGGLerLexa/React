@@ -18,9 +18,9 @@ class Expand extends Component {
           <span className="expand__title">{this.props.title}</span>
           <button className="expand__toggle-btn" onClick={this.toggleButton}>
             {this.state.isOpen ? (
-              <FontAwesomeIcon icon="fa-thin fa-angle-down" />
+              <i className="fa-solid fa-chevron-down"></i>
             ) : (
-              <FontAwesomeIcon icon="fa-thin fa-angle-up" />
+              <i className="fa-solid fa-chevron-up"></i>
             )}
           </button>
         </div>
