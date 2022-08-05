@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Contacts from './Contacts.jsx';
-import Home from './Home.jsx';
-import PageNotFound from './PageNotFound.jsx';
-import Products from './Products.jsx';
+import Contacts from './Contacts';
+import Home from './Home';
+import PageNotFound from './PageNotFound';
+import Products from './Products';
 
 const App = () => {
   return (
