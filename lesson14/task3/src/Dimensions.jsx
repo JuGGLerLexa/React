@@ -1,41 +1,65 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 
-class Dimensions extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      width: null,
-      height: null,
-    };
-  }
+const Dimensions = () => {
+  const [demensions, setDimensions] = useState({
+    width: null,
+    height: null,
+  });
 
-  componentDidMount() {
-    window.addEventListener('resize', this.handleResize);
+  useEffect(() => {
     const { innerHeight, innerWidth } = window;
-    this.setDimensions({ width: innerWidth, height: innerHeight });
-  }
+    setDimensions({ width: innerWidth, height: innerHeight });
+    const handleResize = e => {
+      const { innerWidth, innerHeight } = e.target;
+      setDimensions({ width: innerWidth, height: innerHeight });
+    };
+    window.addEventListener('resize', handleResize);
 
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize);
-  }
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
-  handleResize = e => {
-    const { innerWidth, innerHeight } = e.target;
-    this.setDimensions({ width: innerWidth, height: innerHeight });
-  };
+  const { width, height } = demensions;
+  return <div className="dimensions">{`${width}px - ${height}px`}</div>;
+};
 
-  setDimensions = ({ width, height }) => {
-    this.setState({
-      width,
-      height,
-    });
-    document.title = `${innerWidth} x ${innerHeight}`;
-  };
+// class Dimensions extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       width: null,
+//       height: null,
+//     };
+//   }
 
-  render() {
-    const { width, height } = this.state;
-    return <div className="dimensions">{`${width}px - ${height}px`}</div>;
-  }
-}
+//   componentDidMount() {
+//     window.addEventListener('resize', this.handleResize);
+//     const { innerHeight, innerWidth } = window;
+//     this.setDimensions({ width: innerWidth, height: innerHeight });
+//   }
+
+//   componentWillUnmount() {
+//     window.removeEventListener('resize', this.handleResize);
+//   }
+
+//   handleResize = e => {
+//     const { innerWidth, innerHeight } = e.target;
+//     this.setDimensions({ width: innerWidth, height: innerHeight });
+//   };
+
+//   setDimensions = ({ width, height }) => {
+//     this.setState({
+//       width,
+//       height,
+//     });
+//     document.title = `${innerWidth} x ${innerHeight}`;
+//   };
+
+//   render() {
+//     const { width, height } = this.state;
+//     return <div className="dimensions">{`${width}px - ${height}px`}</div>;
+//   }
+// }
 
 export default Dimensions;
