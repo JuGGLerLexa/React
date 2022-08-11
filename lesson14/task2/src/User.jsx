@@ -34,6 +34,3 @@ const User = () => {
 };
 
 export default User;
-
-
-24.51
